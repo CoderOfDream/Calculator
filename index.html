@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    background: linear-gradient(to right, #230007,#D1603D);
+}
+.button{
+    font-size: 40px;
+    width: 70px;
+}
+.calc form input{
+    width: 287px;
+    height: 50px;
+    border: 2px solid grey;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="calc">
+        <form name="form">
+            <input class="text btn-light" name="text">
+        </form>
+        <table>
+            <tr>
+                <td><input type="button" class="button btn btn-outline-info" value="7" onclick="insert('7')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="8" onclick="insert('8')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="9" onclick="insert('9')"></td>
+                <td><input type="button" class="button btn btn-outline-primary" value="C" onclick="c()"></td> 
+            </tr>
+            <tr>
+                <td><input type="button" class="button btn btn-outline-info" value="4" onclick="insert('4')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="5" onclick="insert('5')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="6" onclick="insert('6')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="+" onclick="insert('+')"></td> 
+            </tr>
+            <tr>
+                <td><input type="button" class="button btn btn-outline-info" value="1" onclick="insert('1')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="2" onclick="insert('2')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="3" onclick="insert('3')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="-" onclick="insert('-')"></td> 
+            </tr>
+            <tr>
+                <td><input type="button" class="button btn btn-outline-info" value="*" onclick="insert('*')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="0" onclick="insert('0')"></td>
+                <td><input type="button" class="button btn btn-outline-info" value="/" onclick="insert('/')"></td>
+                <td rowspan="2"><input style="height: 150px;" type="button" class="button btn btn-outline-success" value="=" onclick="equal()"></td> 
+            </tr>
+            <tr>
+                    <td colspan="2"><input style="width:140px;" type="button" class="button btn btn-outline-info" value="?" onclick="pidor()"></td>
+                    <td><input type="button" class="button btn btn-outline-info" value="." onclick="insert('.')"></td>
+                </tr>
+        </table>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <script >
+        let insert = (num) =>  document.form.text.value += num;
+
+  
+let equal = () => {
+ let exp = document.form.text.value;
+ if(exp) {
+  document.form.text.value = eval(exp);
+ }
+}
+let c = () => document.form.text.value = '';
+
+let pidor = () => {
+  let exp = document.form.text.value;
+  if(exp) {
+      document.form.text.value = 'Hello :)';
+  } else {
+      document.form.text.value = 'Click again';
+  }
+}
+    
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
